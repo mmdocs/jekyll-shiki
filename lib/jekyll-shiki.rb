@@ -17,7 +17,7 @@ module Jekyll
       shiki_config = site.config["shiki"]
       raise "Shiki highlight failed: Shiki config not found in jekyll config" unless shiki_config
 
-      bundle_path = shiki_config["bundle_path"]
+      bundle_path = shiki_config["file_path"]
       raise "Shiki highlight failed: Required shiki bundle path." unless bundle_path
 
       File.join(site.source, bundle_path)
@@ -67,9 +67,7 @@ module Jekyll
       html_content.match?(/\A\s*(<!doctype\s+html|<html\b)/i)
     end
 
-    def self.transform_html(html_content, site) # rubocop:disable Metrics/MethodLength
-      Jekyll.logger.info ""
-      Jekyll.logger.info "[jekyll-shiki] : Highlight with shiki will take time for first build"
+    def self.transform_html(html_content, site)
       doc = if full_document?(html_content)
               Nokogiri::HTML.parse(html_content)
             else
