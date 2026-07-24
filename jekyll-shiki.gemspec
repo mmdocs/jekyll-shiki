@@ -8,12 +8,12 @@ Gem::Specification.new do |spec|
   spec.authors = ["phothinmg"]
   spec.email = ["phothinmg@disroot.org"]
 
-  spec.summary = "TODO: Write a short summary, because RubyGems requires one."
-  spec.homepage = "TODO: Put your gem's website or public repo URL here."
+  spec.summary = "Jekyll plugin for Shiki Js"
+  spec.homepage = "Put your gem's website or public repo URL here."
   spec.license = "MIT"
   spec.required_ruby_version = ">= 3.3.0"
-  spec.metadata["source_code_uri"] = "TODO: Put your gem's public repo URL here."
-  spec.metadata["changelog_uri"] = "TODO: Put your gem's CHANGELOG.md URL here."
+  spec.metadata["source_code_uri"] = "https://github.com/mmdocs/jekyll-shiki"
+  spec.metadata["changelog_uri"] = "https://github.com/mmdocs/jekyll-shiki/blob/main/CHANGELOG.md"
   spec.metadata["rubygems_mfa_required"] = "true"
   spec.files = `git ls-files -z`.split("\x0").select do |f|
     f.match(/^(lib|LICENSE|README)/i)

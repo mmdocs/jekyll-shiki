@@ -27,7 +27,7 @@ module Jekyll
       script_path = resolve_shiki_bundle_path(site)
 
       cache_key = Digest::SHA256.hexdigest("#{lang}::#{code}")
-      Jekyll::Cache.new("ShikiCodeBlock").getset(cache_key) do
+      Jekyll::Cache.new("Shiki").getset(cache_key) do
         input = JSON.generate({ code: code, lang: lang }.compact)
         stdout, stderr, status = Open3.capture3("node", script_path, stdin_data: input)
         raise "Shiki highlight failed: #{stderr}" unless status.success?
@@ -67,7 +67,9 @@ module Jekyll
       html_content.match?(/\A\s*(<!doctype\s+html|<html\b)/i)
     end
 
-    def self.transform_html(html_content, site)
+    def self.transform_html(html_content, site) # rubocop:disable Metrics/MethodLength
+      Jekyll.logger.info ""
+      Jekyll.logger.info "[jekyll-shiki] : Highlight with shiki will take time for first build"
       doc = if full_document?(html_content)
               Nokogiri::HTML.parse(html_content)
             else
