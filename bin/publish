@@ -12,6 +12,6 @@ if [[ -z "$version" ]]; then
 	fi
 fi
 
-gem push jekyll-tabler-"$version".gem
+gem push jekyll-shiki-"$version".gem
 
-rm -rf jekyll-tabler-"$version".gem
+rm -rf jekyll-shiki-"$version".gem
