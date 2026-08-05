@@ -7,13 +7,12 @@ Gem::Specification.new do |spec|
   spec.version = Jekyll::Shiki::VERSION
   spec.authors = ["phothinmg"]
   spec.email = ["phothinmg@disroot.org"]
-
-  spec.summary = "Jekyll plugin for Shiki Js, for mmdocs theme"
-  spec.homepage = "https://rubygems.org/gems/jekyll-shiki"
+  spec.summary = "Jekyll plugin for Shiki Js"
+  spec.homepage = "https://phothinmg.github.io/jekyll-shiki/"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 3.3.0"
-  spec.metadata["source_code_uri"] = "https://github.com/mmdocs/jekyll-shiki"
-  spec.metadata["changelog_uri"] = "https://github.com/mmdocs/jekyll-shiki/blob/main/CHANGELOG.md"
+  spec.metadata["source_code_uri"] = "https://github.com/phothinmg/jekyll-shiki"
+  spec.metadata["changelog_uri"] = "https://github.com/phothinmg/jekyll-shiki/blob/main/CHANGELOG.md"
   spec.metadata["rubygems_mfa_required"] = "true"
   spec.files = [*Dir["lib/**/*.rb"], "LICENSE.txt", "README.md"]
   spec.require_paths = ["lib"]

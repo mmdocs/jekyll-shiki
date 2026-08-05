@@ -1,8 +1,17 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-read -p "Enter version: " version
+version="${1:-${VERSION:-}}"
 
-gem push jekyll-minify-js-"$version".gem
+if [[ -z "$version" ]]; then
+	if [[ -t 0 ]]; then
+		read -r -p "Enter version: " version
+	else
+		echo "VERSION is required when running non-interactively" >&2
+		exit 1
+	fi
+fi
 
-rm -rf jekyll-minify-js-"$version".gem
+gem push jekyll-tabler-"$version".gem
+
+rm -rf jekyll-tabler-"$version".gem
